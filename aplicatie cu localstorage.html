@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stocarea obiectelor JavaScript în localStorage HTML5</title>
+</head> 
+<body>
+    <script>
+    var personObject = { name: "Peter", age: 18, married: false };
+     
+    // Convertiți obiectul persoană în șir JSON și salvați-l în stocare
+    localStorage.setItem("personObject", JSON.stringify(personObject));
+     
+    // Preluați șirul JSON
+    var jsonString = localStorage.getItem("personObject");
+     
+    // Analizați șirul JSON înapoi la obiectul JS
+    var retrievedObject = JSON.parse(jsonString);
+    console.log(retrievedObject);
+     
+    //Accesarea valorilor individuale
+    document.write(retrievedObject.name + "<br>"); // Printuri: Peter
+    document.write(retrievedObject.age + "<br>"); // Printuri: 18
+    document.write(retrievedObject.married); // Printuri: false
+    </script>
+    <p><strong>Note:</strong>Verificați consola browserului apăsând tasta f12 de pe tastatură.</p>
+</body>
+</html>
